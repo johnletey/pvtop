@@ -72,9 +72,9 @@ func main() {
 		}
 		proposer := "error getting proposer"
 		if propIdx >= 0 {
-			proposer = v.GetInfo(propIdx)
+			proposer = v.GetName(propIdx)
 		}
-		SummaryChan <- fmt.Sprintf("height/round/step: %s - v: %.0f%% c: %.0f%% (%v)\n\nProposer:\n(rank/%%/moniker) %s", hrs, votePct*100, commitPct*100, dur, proposer)
+		SummaryChan <- fmt.Sprintf("height/round/step: %s - v: %.0f%% c: %.0f%% (%v)\n\nProposer: %s", hrs, votePct*100, commitPct*100, dur, proposer)
 		voteChan <- votes
 		votePctChan <- votePct
 		commitPctChan <- commitPct

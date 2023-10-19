@@ -208,8 +208,12 @@ func (v *ValNames) getPower(index int) float64 {
 	return float64(v.power[index]) / 100
 }
 
+func (v *ValNames) GetName(index int) string {
+	return v.getByIndex(index)
+}
+
 func (v *ValNames) GetInfo(index int) string {
-	moniker := v.getByIndex(index)
+	moniker := v.GetName(index)
 	if len([]byte(moniker)) > 20 {
 		moniker = string(append([]byte(moniker[:14]), []byte("...")...))
 	}

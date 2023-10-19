@@ -19,7 +19,7 @@ func main() {
 	flag.Parse()
 
 	if fastPolling {
-		refreshRate = 250 * time.Millisecond
+		refreshRate = 100 * time.Millisecond
 	}
 
 	if len(flag.Args()) < 1 {
